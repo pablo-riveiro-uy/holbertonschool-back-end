@@ -25,6 +25,6 @@ if __name__ == "__main__":
 
     total += done
 
-    print(f"Employee {response['name']} is done with tasks({done}/{total}:)")
+    print(f"Employee {response['name']} is done with tasks({done}/{total}):")
     for task in doneTask:
         print(f"\t {task}")
