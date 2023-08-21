@@ -27,25 +27,12 @@ if __name__ == "__main__":
                 TASK_TITLE = task['title']
                 TASK_COMPLETED_STATUS = task["completed"]
                 USERNAME = response["username"]
-            
+
                 task_list.append({
                     "task": TASK_TITLE,
                     "completed": TASK_COMPLETED_STATUS,
                     "username": USERNAME
-                }) 
-                
+                })
 
                 with open(json_file, "w") as jf:
                     json.dump({USER_ID: task_list}, jf)
-
-            
-
-
-
-
-
-
-        
-            
-
-
