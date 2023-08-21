@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ getting todo list of users from an api  """
-import json
+
 import sys
 import requests
 
@@ -15,7 +15,7 @@ total = 0
 doneTask = []
 for task in responseTask:
     if task["userId"] == int(n):
-        if task["completed"] == True:
+        if task["completed"] is True:
             doneTask.append(task["title"])
             done += 1
         else:
@@ -27,6 +27,5 @@ print(f"Employee {response['name']} is done with task({done}/{total})")
 for task in doneTask:
     print(f"\t {task}")
 
-
-
-
+if __name__ == "__main__":
+    """ getting todo list of users from an api  """
