@@ -35,6 +35,11 @@ if __name__ == "__main__":
         writer = csv.writer(f)
         for task in responseTask:
             if task['userId'] == int(n):
-                row = [task["userId"], response["name"], task["completed"],
-                       task["title"]]
-                writer.writerow(row)
+                rows = []
+                USER_ID = str(task["userId"])
+                USERNAME = response["username"]
+                TASK_COMPLETED_STATUS = str(task["completed"])
+                TASK_TITLE = task['title']
+
+                f.write('"{}","{}","{}","{}"\n'.format(
+                    USER_ID, USERNAME, TASK_COMPLETED_STATUS, TASK_TITLE))
