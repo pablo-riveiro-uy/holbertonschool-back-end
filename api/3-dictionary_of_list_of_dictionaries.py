@@ -26,9 +26,9 @@ if __name__ == "__main__":
                 USERNAME = user["username"]
 
                 task_list.append({
+                    "username": USERNAME,
                     "task": TASK_TITLE,
-                    "completed": TASK_COMPLETED_STATUS,
-                    "username": USERNAME
+                    "completed": TASK_COMPLETED_STATUS
                 })
         all_users.append({USER_ID: task_list})
 
