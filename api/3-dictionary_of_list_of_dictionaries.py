@@ -16,6 +16,7 @@ if __name__ == "__main__":
     task_list = []
     a_user = []
     all_users = []
+    new_dict = {}
     for user in response:
         USER_ID = int(user["id"])
         task_list = []
@@ -30,7 +31,6 @@ if __name__ == "__main__":
                     "task": TASK_TITLE,
                     "completed": TASK_COMPLETED_STATUS
                 })
-        all_users.append({USER_ID: task_list})
-
+        new_dict[USER_ID] = task_list
         with open(json_file, "w") as jf:
-            json.dump(all_users, jf)
+            json.dump(new_dict, jf)
