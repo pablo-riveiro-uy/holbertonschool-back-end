@@ -14,11 +14,11 @@ if __name__ == "__main__":
 
     json_file = "todo_all_employees.json"
     task_list = []
-    eache_usr = []
+    a_user = []
     all_users = []
     for user in response:
-        a_user = []
         USER_ID = int(user["id"])
+        task_list = []
         for task in responseTask:
             if int(task["userId"]) == USER_ID:
                 TASK_TITLE = task['title']
@@ -30,7 +30,7 @@ if __name__ == "__main__":
                     "completed": TASK_COMPLETED_STATUS,
                     "username": USERNAME
                 })
-                a_user.append({USER_ID: task_list})
-        all_users.append(a_user)
-    with open(json_file, "w") as jf:
-        json.dump(all_users, jf)
+        all_users.append({USER_ID: task_list})
+
+        with open(json_file, "w") as jf:
+            json.dump(all_users, jf)
